@@ -1,10 +1,12 @@
 import React from "React";
-import { StyleSheet, View, Text } from "react-native";
+import { View, Text } from "react-native";
+import { Header } from "../sections/Header";
 
 export class Home extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
+      <View>
+        <Header message="Press to login" />
         <Text>Jessica Lalanne</Text>
         <Text>React Native - React.js Developer</Text>
         <Text>Bordeaux - Bayonne</Text>
@@ -12,12 +14,3 @@ export class Home extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-    container : {
-        flex: 1,
-        backgroundColor: "#fff",
-        alignItems: "center",
-        justifyContent: "center",
-    },
-});
