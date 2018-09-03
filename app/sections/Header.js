@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, AsyncStorage, Alert  } from 'react-native';
+import { StyleSheet, Text, View, Image, AsyncStorage,Alert  } from 'react-native';
 
 export class Header extends React.Component {
     constructor(props) {
@@ -47,19 +47,25 @@ export class Header extends React.Component {
 
     }
 
+    onPress = () => {
+        Alert.alert("You tapped the button!");
+      };
     
     render() {
         let display = this.state.isLoggedIn ? this.state.loggedUser : this.props.message ;
         return (
             <View style={styles.headStyle}>
-                <Image 
-                    style={styles.logoStyle} 
-                    source={ require('./img/logo.png')} 
-                />
+                
+                        <Image 
+                            style={styles.logoStyle} 
+                            source={ require('./img/logo.png')} 
+                        />
+              
                 <Text 
                     style={styles.headText} 
                     onPress={this.toggleUser}>{display}
                 </Text>
+               
             </View>    
         );
     }

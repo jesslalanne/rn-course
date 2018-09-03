@@ -44,28 +44,29 @@ export class Register extends React.Component {
       <View style={styles.container}>
         <Text style={styles.heading}>Register Account</Text>
 
+        <Text style={styles.label}>Enter Username</Text>
         <TextInput
           style={styles.inputs}
           onChangeText={text => this.setState({ username: text })}
           value={this.state.username}
         />
-        <Text style={styles.label}>Enter Username</Text>
-
+        
+        <Text style={styles.label}>Enter Password</Text>
         <TextInput
           style={styles.inputs}
           onChangeText={text => this.setState({ passwrd: text })}
           value={this.state.passwrd}
           secureTextEntry={true}
         />
-        <Text style={styles.label}>Enter Password</Text>
-
+        
+        <Text style={styles.label}>Confirm Password</Text>
         <TextInput
           style={styles.inputs}
           onChangeText={text => this.setState({ passwrdConfirm: text })}
           value={this.state.passwrdConfirm}
           secureTextEntry={true}
         />
-        <Text style={styles.label}>Confirm Password</Text>
+       
 
         <TouchableHighlight onPress={this.registerAccount} underlayColor="#31e981">
           <Text style={styles.buttons}>Register</Text>
@@ -93,11 +94,16 @@ const styles = StyleSheet.create({
   inputs: {
     flex: 1,
     width: "80%",
-    padding: 10
+    padding: 10,
+    borderWidth: 1,
+    marginBottom: 5
   },
   buttons: {
     marginTop: 15,
-    fontSize: 16
+    fontSize: 16,
+    borderWidth: 1,
+    borderRadius: 5,
+    padding: 10
   },
   labels: {
     paddingBottom: 10

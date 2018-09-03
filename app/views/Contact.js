@@ -53,6 +53,7 @@ export class Contact extends React.Component {
         <TouchableHighlight onPress={this.clearFields} underlayColor="#31e981">
           <Text style={styles.buttons}>Reset Form</Text>
         </TouchableHighlight>
+        <Text onPress={() => this.props.navigation.goBack()} style={styles.backButton}>GO BACK</Text>
       </View>
     );
   }
@@ -90,5 +91,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 5,
     padding: 10
-  }
+  },
+  backButton: {
+    padding: 10,
+    textAlign: 'center',
+    borderWidth: 1,
+    borderRadius: 5,
+}
 });
