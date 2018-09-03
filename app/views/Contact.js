@@ -66,7 +66,8 @@ const styles = StyleSheet.create({
   },
   heading: {
     fontSize: 16,
-    flex: 1
+    flex: 1,
+    marginTop: 10
   },
   inputs: {
     flex: 1,
@@ -79,6 +80,7 @@ const styles = StyleSheet.create({
     flex: 2,
     width: "80%",
     paddingTop: 20,
+    paddingLeft: 10,
     borderWidth: 1,
     marginBottom: 5
   },
