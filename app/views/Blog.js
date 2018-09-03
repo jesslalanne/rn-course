@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, FlatList} from 'react-native';
+import { Text, View, FlatList, StyleSheet } from 'react-native';
 import HTML from 'react-native-render-html';
 
 export class Blog extends React.Component {
@@ -13,7 +13,7 @@ export class Blog extends React.Component {
     }
 
     componentDidMount(){
-        return fetch('https://public-api.wordpress.com/rest/v1.1/sites/{YOUR_WORDPRESS.COM_SITE GOES HERE}/posts')
+        return fetch('https://public-api.wordpress.com/rest/v1.1/sites/venturebeat.com/posts')
         .then((response) => response.json())
         .then((responseJson) =>{ 
             this.setState({
@@ -35,9 +35,11 @@ export class Blog extends React.Component {
             <View>
                 { this.state.blogLoaded && (
                     <View style={{ paddingTop: 40}} >
+                     <Text onPress={() => this.props.navigation.goBack()} style={styles.backButton}>GO BACK</Text>
                         <FlatList
                             data={ this.state.blogList }
                             keyExtractor={(item, index) => item.ID.toString()}
+                            initialNumToRender={5}
                             renderItem={({item}) =>
                                 <BlogItem
                                     id={item.ID}
@@ -48,7 +50,7 @@ export class Blog extends React.Component {
                                 />
                             } 
                         />
-                    
+                       
                     </View>
                 )}
                 { !this.state.blogLoaded && (
@@ -84,3 +86,10 @@ export class BlogItem extends React.Component {
         );
     }
 }
+
+const styles = StyleSheet.create({
+    backButton: {
+        paddingBottom: 50,
+        textAlign: 'center'
+    }
+});

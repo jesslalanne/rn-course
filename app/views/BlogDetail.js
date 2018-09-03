@@ -15,7 +15,7 @@ export class BlogDetail extends React.Component {
 
     componentDidMount(){
         let blogId = this.props.navigation.getParam('blogId', 'NO BLOG');
-        return fetch(`https://public-api.wordpress.com/rest/v1.1/sites/{YOUR_WORDPRESS.COM_SITE GOES HERE}/posts/${blogId}`)
+        return fetch(`https://public-api.wordpress.com/rest/v1.1/sites/venturebeat.com/posts/${blogId}`)
         .then((response) => response.json())
         .then((responseJson) =>{
             this.setState({
