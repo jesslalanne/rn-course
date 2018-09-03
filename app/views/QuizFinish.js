@@ -18,7 +18,7 @@ export class Finish extends React.Component {
 
         return (
             <View style={styles.container}>
-                <Text>Your quiz score was {userScore}</Text>
+                <Text>Your score is {userScore}</Text>
                 <Text>You missed on {questionsMissed} out of {totalQuestions} questions</Text>
 
                 <TouchableHighlight onPress={this.exitQuiz} style={styles.button}>
