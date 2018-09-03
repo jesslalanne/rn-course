@@ -39,7 +39,6 @@ export class Blog extends React.Component {
                         <FlatList
                             data={ this.state.blogList }
                             keyExtractor={(item, index) => item.ID.toString()}
-                            initialNumToRender={5}
                             renderItem={({item}) =>
                                 <BlogItem
                                     id={item.ID}

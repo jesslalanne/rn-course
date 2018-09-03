@@ -71,15 +71,22 @@ const styles = StyleSheet.create({
   inputs: {
     flex: 1,
     width: "80%",
-    padding: 10
+    padding: 10,
+    borderWidth: 1,
+    marginBottom: 5
   },
   multiInput: {
     flex: 2,
-    width: "90%",
-    paddingTop: 20
+    width: "80%",
+    paddingTop: 20,
+    borderWidth: 1,
+    marginBottom: 5
   },
   buttons: {
     marginTop: 15,
-    fontSize: 16
+    fontSize: 16,
+    borderWidth: 1,
+    borderRadius: 5,
+    padding: 10
   }
 });

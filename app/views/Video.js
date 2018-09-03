@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, FlatList, Image, TouchableWithoutFeedback } from 'react-native';
+import { Text, View, FlatList, StyleSheet, Image, TouchableWithoutFeedback } from 'react-native';
 
 export class Video extends React.Component {
 
@@ -32,8 +32,10 @@ export class Video extends React.Component {
             <View>
                 { this.state.listLoaded && (
                     <View style={{ paddingTop: 30}}>
+                    <Text onPress={() => this.props.navigation.goBack()} style={styles.backButton}>GO BACK</Text>
                         <FlatList 
                             data={ this.state.videoList }
+                            
                             renderItem={({item}) => 
                                 <TubeItem
                                     navigate = {navigate} 
@@ -83,3 +85,9 @@ export class TubeItem extends React.Component {
 
 }
 
+const styles = StyleSheet.create({
+    backButton: {
+        paddingBottom: 50,
+        textAlign: 'center'
+    }
+});
